@@ -119,6 +119,44 @@ int erro()
 	system("pause");
 }
 
+int registroMaisNomes()
+{
+    int escolha;
+
+    printf("Gostaria de registrar mais algum nome?\n");
+    printf("1 - Sim\n");
+    printf("2 - Não\n");
+    printf("Escolha: ");
+    scanf("%d", &escolha);
+
+    return escolha;
+}
+
+int consultaMaisNomes()
+{
+    int escolha;
+
+    printf("\nGostaria de consultar mais algum nome?\n");
+    printf("1 - Sim\n");
+    printf("2 - Não\n");
+    printf("Escolha: ");
+    scanf("%d", &escolha);
+
+    return escolha;
+}
+
+int deleteMaisNomes()
+{
+    int escolha;
+
+    printf("Gostaria de deletar mais algum nome?\n");
+    printf("1 - Sim\n");
+    printf("2 - Não\n");
+    printf("Escolha: ");
+    scanf("%d", &escolha);
+
+    return escolha;
+}
 
 int main() //função principal
 {
@@ -145,16 +183,23 @@ int main() //função principal
 		
 		switch(opcao) //executar blocos de código com base no valor de uma expressão
 		{
-			case 1: 
-			registrar(); //chamar a função
-			break;
+			case 1:
+            do  {
+                 registrar();
+              	} while (registroMaisNomes() == 1);
+            break;
+
 			
 			case 2:
-			consultar();
+			do  {
+				 consultar();
+				} while (consultaMaisNomes() == 1);
 			break;
 			
 			case 3:
-			deletar();
+			do  {
+				 deletar();
+				} while (deleteMaisNomes() == 1);
 			break;
 			
 			case 4:
