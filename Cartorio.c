@@ -162,56 +162,72 @@ int main() //função principal
 {
 	int opcao=0; //int declarar variável de valor inteiro
 	int laco=1;
+	char senhadigitada[10]="a";
 	
-	for(laco=1;laco=1;) //executar um bloco de código repetidamente
+	printf("### Registro de Nomes da EBAC ###\n\n");
+	printf("Digite a senha: ");
+	scanf("%s", senhadigitada);
+	
+	if(strcmp(senhadigitada, "admin") == 0)
 	{
-		system("cls"); //limpar a tela
-		
-		setlocale(LC_ALL, "Portuguese"); //definir o idioma
-			
-		printf("### Cartório da EBAC ###\n\n"); //início do menu
-		printf("Escolha a opção desejada do menu:\n\n");
-		printf("\t1- Registrar nomes\n"); // \t usado para espaçar e \n para pular linhas
-		printf("\t2- Consultar nomes\n");
-		printf("\t3- Deletar nomes\n");
-		printf("\t4- Sair do sistema\n\n"); 
-		printf("Opção: "); //fim do menu
-		
-		scanf("%d", &opcao); //armazenar a escolha do usuário
-		
-		system("cls");
-		
-		switch(opcao) //executar blocos de código com base no valor de uma expressão
+	
+		for(laco=1;laco=1;) //executar um bloco de código repetidamente
 		{
-			case 1:
-            do  {
-                 registrar();
-              	} while (registroMaisNomes() == 1);
-            break;
+			system("cls"); //limpar a tela
+			
+			setlocale(LC_ALL, "Portuguese"); //definir o idioma
+			
+			printf("### Registro de Nomes da EBAC ###\n\n"); //início do menu
+			printf("Escolha a opção desejada do menu:\n\n");
+			printf("\t1- Registrar nomes\n"); // \t usado para espaçar e \n para pular linhas
+			printf("\t2- Consultar nomes\n");
+			printf("\t3- Deletar nomes\n");
+			printf("\t4- Sair do sistema\n\n"); 
+			printf("Opção: "); //fim do menu
+		
+			scanf("%d", &opcao); //armazenar a escolha do usuário
+		
+			system("cls");
+		
+			switch(opcao) //executar blocos de código com base no valor de uma expressão
+			{
+				case 1:
+        	    do  {
+            	     registrar();
+              		} while (registroMaisNomes() == 1);
+            	break;
 
 			
-			case 2:
-			do  {
-				 consultar();
-				} while (consultaMaisNomes() == 1);
-			break;
+				case 2:
+				do  {
+					 consultar();
+					} while (consultaMaisNomes() == 1);
+				break;
 			
-			case 3:
-			do  {
-				 deletar();
-				} while (deleteMaisNomes() == 1);
-			break;
+				case 3:
+				do  {
+					 deletar();
+					} while (deleteMaisNomes() == 1);
+				break;
 			
-			case 4:
-			printf("Obrigado por usar o sistema!\n\n");
-			return 0;
-			break;
+				case 4:
+				printf("Obrigado por usar o sistema!\n\n");
+				return 0;
+				break;
 			
-			default:
-			erro();
-			break;
-		}
+				default:
+				erro();
+				break;
+			}
+ 		}
 	}
+	
+	else
+	{
+		printf("Senha incorreta!\n");
+	}
+	
+	return 0;
 }
 
 
